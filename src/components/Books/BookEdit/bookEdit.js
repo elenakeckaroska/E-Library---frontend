@@ -21,21 +21,23 @@ const BookEdit = (props) => {
 
     const onFormSubmit = (e) => {
         e.preventDefault();
-        const name = formData.name !== "" ? formData.name : props.book.name;
+        const name = formData.name !== props.book.name ? formData.name : props.book.name;
         const category = formData.category !== "" ? formData.category : props.book.category;
-        const author = formData.author !== 0 ? formData.author.id : props.book.author.id;
+        const author = formData.author !== 0 ? formData.author : props.book.author.id;
         const availableCopies = formData.availableCopies !== 0 ? formData.availableCopies : props.book.availableCopies;
 
         props.onEditBook(props.book.id, name, category, author, availableCopies);
         history.push("/books")
 
     }
+    console.log(formData)
+
     return(
         <div className="row mt-5">
             <div className="col-md-5">
                 <form onSubmit={onFormSubmit}>
                     <div className="form-group">
-                        <label htmlFor="name">Book name</label>
+                        <label htmlFor="name">Book title</label>
                         <input type="text"
                                className="form-control"
                                id="name"
@@ -43,6 +45,7 @@ const BookEdit = (props) => {
                                required
                                placeholder={props.book.name}
                                onChange = {handleChange}
+
                         />
                     </div>
 
@@ -61,13 +64,15 @@ const BookEdit = (props) => {
                     </div>
 
                     <div className="form-group">
-                        <label>Author</label>
-                        <select name="author" className="form-control" onChange = {handleChange}>
+                        <label htmlFor="author">Author</label>
+                        <select name="author" id="author" className="form-control" onChange = {handleChange}>
                             {props.authors.map((term) =>{
                                 if(props.book.author !== undefined && props.book.author.id === term.id)
-                                    return  <option selected={props.book.author.name} value={term.id}>{term.name}</option>
+                                    return  <option selected={props.book.author.name + " " + props.book.author.surname}
+                                                    value={term.id}>
+                                        {term.name + " " + term.surname}</option>
                                 else
-                                    return  <option value={term.id}>{term.name}</option>
+                                    return  <option value={term.id}>{term.name + " " + term.surname}</option>
                             })}
                         </select>
                     </div>

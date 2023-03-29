@@ -44,6 +44,7 @@ const bookAdd = (props) => {
                                required
                                placeholder="Enter book name"
                                onChange = {handleChange}
+
                         />
                     </div>
                     <div className="form-group">
@@ -58,7 +59,7 @@ const bookAdd = (props) => {
                         <label htmlFor="quantity">Author</label>
                         <select name="author" className="form-control" onChange = {handleChange}>
                             {props.authors.map((term) =>
-                                <option value={term.id}>{term.name}</option>
+                                <option value={term.id}>{term.name + " " + term.surname}</option>
                             )}
                         </select>
                     </div>
