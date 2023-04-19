@@ -45,6 +45,10 @@ class App extends Component{
                                                                     onEdit={this.getBook}
                                                                     onDelete={this.deleteBook}
                                                                     onBorrow={this.markAsTakenBook}/>}/>
+                  <Route path={"/"} exact render={() => <Books books={this.state.books}
+                                                                    onEdit={this.getBook}
+                                                                    onDelete={this.deleteBook}
+                                                                    onBorrow={this.markAsTakenBook}/>}/>
 
               </div>
             </main>

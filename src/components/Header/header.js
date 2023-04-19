@@ -5,12 +5,12 @@ import {Link} from 'react-router-dom';
 const header = (props) => {
     return (
         <header>
-            <nav className="navbar navbar-expand-md navbar-dark navbar-fixed bg-dark">
-                <a className="navbar-brand" href="/products">E-Shop Application</a>
-                <button className="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-                        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggle-icon"></span>
-                </button>
+            <nav className="navbar navbar-expand-md navbar-dark navbar-fixed bg-dark px-4">
+                <a className="navbar-brand" href="/books">E-Library</a>
+                {/*<button className="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbarCollapse"*/}
+                {/*        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">*/}
+                {/*    <span className="navbar-toggle-icon"></span>*/}
+                {/*</button>*/}
                 <div className="collapse navbar-collapse" id="navbarCollapse">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item active">
