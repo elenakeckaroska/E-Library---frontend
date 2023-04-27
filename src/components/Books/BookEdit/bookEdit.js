@@ -83,7 +83,7 @@ const BookEdit = (props) => {
                                id="availableCopies"
                                name="availableCopies"
                                required
-                               placeholder={props.book.availableCopies}
+                               ={props.book.availableCopies}
                                onChange = {handleChange}
                         />
                     </div>

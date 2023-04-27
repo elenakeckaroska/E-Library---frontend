@@ -42,13 +42,15 @@ class Books extends Component {
                                    nextLabel={"next"}
                                    breakLabel={<a href="/#">...</a>}
                                    breakClassName={"break-me"}
-                                   pageClassName={"ml-1"}
+                                   pageClassName={"ml-1 page-link"}
                                    pageCount={pageCount}
-                                   marginPagesDisplayed={2}
+                                   marginPagesDisplayed={5}
                                    pageRangeDisplayed={5}
                                    onPageChange={this.handlePageClick}
                                    containerClassName={"pagination m-4 justify-content-center"}
-                                   activeClassName={"active"}
+                                   activeClassName={"active page-link"}
+                                   previousClassName={"page-link"}
+                                   nextClassName={"page-link"}
                     />
                     <div className={"col mb-3"}>
                         <div className={"row"}>
